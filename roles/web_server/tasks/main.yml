@@ -1,0 +1,11 @@
+---
+- name: Install Nginx on web servers
+  ansible.builtin.apt:
+    name: nginx
+    state: present
+
+- name: Copy static website files
+  ansible.builtin.copy:
+    src: /path/to/your/static/files/
+    dest: /usr/share/nginx/html/
+    mode: '0644'
