@@ -1,14 +1,29 @@
-worker_processes auto;
-error_log /var/log/nginx/error.log;
+server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
 
-events {
-    worker_connections 1024;
+        root /var/www/html;
+
+        # Add index.php to the list if you are using PHP
+        index index.html index.htm index.nginx-debian.html;
+
+        server_name _;
+
+        location / {
+                # First attempt to serve request as file, then
+                # as directory, then fall back to displaying a 404.
+                try_files $uri $uri/ =404;
+        }
+
+
+location /template {
+    root /var/www/html/dg-web-portfolio;
+    try_files /template/index.html =404;
 }
 
-http {
-    sendfile on;
-    tcp_nopush on;
-    tcp_nodelay on;
+location /assets {
+    root /var/www/html/dg-web-portfolio/template;
+    try_files $uri $uri/ =404;
+}
 
-    include /etc/nginx/conf.d/*.conf;  # Allows for additional configurations for other services
 }
