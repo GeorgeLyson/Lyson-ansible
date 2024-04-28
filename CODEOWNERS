@@ -1,0 +1,5 @@
+# This is a CODEOWNERS file
+# It specifies the individuals who have the ability to review and approve changes in the repository.
+
+# Default code owner for everything in the repository
+*       @felixtekkstudio
