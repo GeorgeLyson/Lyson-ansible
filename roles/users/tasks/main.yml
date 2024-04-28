@@ -1,21 +1,27 @@
 ---
 - name: "Remove old user accounts in remove_users"
+  become: yes
   user:
     name: "{{ item }}"
     state: "absent"
   with_items: "{{ remove_users }}"
 - name: "Create user accounts"
+  become: yes
   user:
     name: "{{ item.username }}"
     groups: "{{ item.groups }}"
     state: "present"
+    password: "{{ item.passwd }}"
+    update_password: always
   with_items: "{{ users }}"
 - name: "Add authorized keys"
+  become: yes
   authorized_key:
     user: "{{ item.username }}"
     key: "{{ lookup('file', 'files/'+ item.username + '.key.pub') }}"
   with_items: "{{ users }}"
 - name: "Allow admin users to sudo without a password"
+  become: yes
   lineinfile:
     dest: "/etc/sudoers"
     state: "present"

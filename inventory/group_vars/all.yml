@@ -1,7 +1,13 @@
 ---
 users:
   - username: "david-ngugi"
+    comment: "David Ngugi"
     groups: "sudo,www-data"
+    passwd: '$6$rounds=10000$wSXa1UITCOsgSEVs$nn6UnLMO.q7V.7XKXduuV4uO5mnnSVRG3.iRzBqi48Cb5MQCR8XF/H6jbCRPhhDhqfTFHyQb0OBfXL5XxEbmA1' 
+  - username: "stormer-odida"
+    comment: "Stormer Odida"
+    groups: "sudo,www-data"
+    passwd: '*'
 remove_users:
 - "ruby"
 - "tanya"

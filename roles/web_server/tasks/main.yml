@@ -1,9 +1,11 @@
 ---
 - name: Update apt cache
+  become: yes
   apt:
     update_cache: yes
 
 - name: Install Nginx on web servers
+  become: yes
   apt:
     name: nginx
     state: latest
