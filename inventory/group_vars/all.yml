@@ -1,0 +1,7 @@
+---
+users:
+  - username: "david-ngugi"
+    groups: "sudo,www-data"
+remove_users:
+- "ruby"
+- "tanya"

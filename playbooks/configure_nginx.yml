@@ -1,5 +1,9 @@
 ---
-- hosts: nginx_servers
+- hosts: [ web ]
+  gather_facts: yes
+
+- hosts: [ web ]
   become: yes
   roles:
     - nginx
+  tags: nginx

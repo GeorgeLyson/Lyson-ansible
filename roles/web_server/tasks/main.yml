@@ -1,6 +1,13 @@
 ---
+- name: Update apt cache
+  apt:
+    update_cache: yes
+
 - name: Install Nginx on web servers
-  ansible.builtin.apt:
+  apt:
     name: nginx
-    state: present
+    state: latest
+    update_cache: yes
+  notify:
+    restart-nginx
 

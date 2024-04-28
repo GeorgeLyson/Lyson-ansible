@@ -1,5 +1,9 @@
 ---
-- hosts: web_servers
+- hosts: [ web ]
+  gather_facts: yes
+
+- hosts: [ web ]
   become: yes
   roles:
     - web_server
+  tags: web
