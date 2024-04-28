@@ -46,6 +46,9 @@ ansible-playbook deploy-guru.yml -t users
 ```
 
 ### How to use
+Add your sudo password into environ variables
+`export ANSIBLE_BECOME_PASS='your_super_secure_sudo_password'` or append the line to your `~/.bashrc` and restart your terminal.
+
 For general deployment, use the convenience playbook
 ```
 ansible-playbook deploy-guru.yml -t users
