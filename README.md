@@ -49,6 +49,16 @@ ansible-playbook deploy-guru.yml -t users
 Add your sudo password into environ variables
 `export ANSIBLE_BECOME_PASS='your_super_secure_sudo_password'` or append the line to your `~/.bashrc` and restart your terminal.
 
+Update the remote user in your `ansible.cfg` file
+```
+[defaults]
+# Remote user to use for SSH connections
+remote_user = <username>
+
+# Path to private key for SSH connections
+private_key_file = ~/.ssh/id_rsa
+```
+
 For general deployment, use the convenience playbook
 ```
 ansible-playbook deploy-guru.yml -t users
