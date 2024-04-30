@@ -1,0 +1,14 @@
+---
+- name: Update apt cache
+  become: yes
+  apt:
+    update_cache: yes
+
+    
+- name: Copy DeployGuru NGINX configuration
+  template:
+    src: portfolios.deployguru.com
+    dest:  /etc/nginx/sites-available/default
+  notify:
+    - restart-nginx
+

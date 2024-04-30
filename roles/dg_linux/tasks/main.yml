@@ -1,0 +1,7 @@
+---
+- name: Install essential tools
+  become: yes
+  apt:
+    name:
+      - net-tools
+    state: present

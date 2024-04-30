@@ -1,0 +1,25 @@
+---
+- name: Install Nginx
+  apt:
+    name: nginx
+    state: present
+    update_cache: yes
+    
+- name: Copy Nginx configuration
+  template:
+    src: default_nginx.conf.j2
+    dest: /etc/nginx/nginx.conf
+  notify:
+    - restart-nginx
+
+- name: Ensure Nginx is running
+  systemd:
+    name: nginx
+    state: started
+    enabled: yes
+
+
+# sudo systemctl stop nginx
+# sudo apt purge nginx nginx-common nginx-core nginx-full nginx-light
+# sudo rm -rf /etc/nginx
+# sudo rm -rf /var/log/nginx
