@@ -1,9 +1,6 @@
 ---
-- hosts: [ web ]
+- hosts: dg-web-portfolio-hosts
   gather_facts: yes
-
-- hosts: [ web ]
   become: yes
   roles:
-    - web_server
-  tags: web
+    - dg_web_portfolio

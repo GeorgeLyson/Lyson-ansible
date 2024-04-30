@@ -1,9 +1,0 @@
----
-- hosts: [ web ]
-  gather_facts: yes
-
-- hosts: [ web ]
-  roles:
-  - { role: users, tags: users }
-  - { role: web_server, tags: web }
-  - { role: nginx, tags: nginx }
