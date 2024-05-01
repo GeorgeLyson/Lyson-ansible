@@ -1,4 +1,11 @@
 ---
+- hosts: all
+  gather_facts: yes
+  become: yes
+  roles:
+    - dg_linux
+
+
 - hosts: dg-web-portfolio-hosts
   gather_facts: yes
   become: yes
