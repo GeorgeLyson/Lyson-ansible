@@ -1,4 +1,16 @@
 ---
+
+- name: Stop Apache HTTP Server
+  systemd:
+    name: apache2
+    state: stopped
+    enabled: no
+
+- name: Remove Apache HTTP Server package
+  apt:
+    name: apache2
+    state: absent
+    
 - name: Install Nginx
   apt:
     name: nginx
