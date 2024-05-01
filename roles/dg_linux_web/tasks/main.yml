@@ -1,22 +1,22 @@
 ---
 
-- name: Stop Apache HTTP Server
-  systemd:
-    name: apache2
-    state: stopped
-    enabled: no
+# - name: Stop Apache HTTP Server
+#   systemd:
+#     name: apache2
+#     state: stopped
+#     enabled: no
 
-- name: Remove Apache HTTP Server package
-  apt:
-    name: apache2
-    state: absent
-    
+# - name: Remove Apache HTTP Server package
+#   apt:
+#     name: apache2
+#     state: absent
+
 - name: Install Nginx
   apt:
     name: nginx
     state: present
     update_cache: yes
-    
+
 - name: Copy Nginx configuration
   template:
     src: default_nginx.conf.j2
