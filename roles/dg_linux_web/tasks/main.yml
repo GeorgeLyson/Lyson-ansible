@@ -30,8 +30,3 @@
     state: started
     enabled: yes
 
-
-# sudo systemctl stop nginx
-# sudo apt purge nginx nginx-common nginx-core nginx-full nginx-light
-# sudo rm -rf /etc/nginx
-# sudo rm -rf /var/log/nginx
