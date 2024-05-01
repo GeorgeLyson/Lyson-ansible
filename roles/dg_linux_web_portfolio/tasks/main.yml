@@ -4,11 +4,10 @@
   apt:
     update_cache: yes
 
-    
-- name: Copy DeployGuru NGINX configuration
+
+- name: Copy Nginx configuration
   template:
-    src: portfolios.deployguru.com
-    dest:  /etc/nginx/sites-available/default
+    src: template.portfolio.deployguru.com.j2
+    dest: /etc/nginx/sites-enabled/template.deployguru.com
   notify:
     - restart-nginx
-
