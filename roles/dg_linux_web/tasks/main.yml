@@ -17,16 +17,16 @@
     state: present
     update_cache: yes
 
-- name: Copy Nginx configuration
-  template:
-    src: default_nginx.conf.j2
-    dest: /etc/nginx/nginx.conf
-  notify:
-    - restart-nginx
+# - name: Copy Nginx configuration
+#   template:
+#     src: default_nginx.conf.j2
+#     dest: /etc/nginx/nginx.conf
+#   notify:
+#     - restart-nginx
 
-- name: Ensure Nginx is running
-  systemd:
-    name: nginx
-    state: started
-    enabled: yes
+# - name: Ensure Nginx is running
+#   systemd:
+#     name: nginx
+#     state: started
+#     enabled: yes
 

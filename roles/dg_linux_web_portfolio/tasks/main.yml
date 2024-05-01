@@ -7,7 +7,7 @@
 
 - name: Copy Nginx configuration
   template:
-    src: template.portfolio.deployguru.com.j2
+    src: portfolio.deployguru.com.j2
     dest: /etc/nginx/sites-available/portfolio.deployguru.com
   notify:
     - restart-nginx
