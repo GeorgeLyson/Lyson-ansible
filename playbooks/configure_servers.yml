@@ -6,10 +6,10 @@
     - dg_linux
 
 
-- hosts: dg-web-portfolio-hosts
-  gather_facts: yes
-  become: yes
-  roles:
-    - dg_linux
-    - dg_linux_web
-    # - dg_linux_web_portfolio_website
+# - hosts: dg-web-portfolio-hosts
+#   gather_facts: yes
+#   become: yes
+#   roles:
+#     - dg_linux
+#     - dg_linux_web
+#     # - dg_linux_web_portfolio_website
